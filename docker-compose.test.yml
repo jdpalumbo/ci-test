@@ -1,0 +1,27 @@
+version: '3'
+services:
+  node:
+    image: 5ae559a95dc1
+    ports:
+     - "3000:${LISTEN_PORT}"
+    working_dir: /app
+    environment:
+      - SQL_DRIVER=${SQL_DRIVER}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_HOST=${MYSQL_HOST}
+      - MYSQL_PORT=${MYSQL_PORT}
+      - SYNCHRONIZE_DATABASE=${SYNCHRONIZE_DATABASE}
+      - DATABASE_LOGGING=${DATABASE_LOGGING}
+      - LISTEN_PORT= ${LISTEN_PORT}
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: bridge
+
+
+

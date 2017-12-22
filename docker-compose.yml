@@ -1,0 +1,51 @@
+version: '3'
+services:
+  node:
+    build: .
+    ports:
+     - "3000:${LISTEN_PORT}"
+    working_dir: /app
+    volumes:
+      - .:/app
+    environment:
+      - SQL_DRIVER=${SQL_DRIVER}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_HOST=${MYSQL_HOST}
+      - MYSQL_PORT=${MYSQL_PORT}
+      - SYNCHRONIZE_DATABASE=${SYNCHRONIZE_DATABASE}
+      - DATABASE_LOGGING=${DATABASE_LOGGING}
+      - LISTEN_PORT= ${LISTEN_PORT}
+    links:
+      - mysql
+    depends_on:
+      - mysql
+    networks:
+      - backend
+  mysql:
+    image: mysql:5.6
+    restart: "always"
+    ports:
+      - "4306:3306"
+    volumes:
+      - data-mysql:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+    networks:
+      - backend
+
+volumes:
+  data-mysql:
+    driver: local
+
+networks:
+  backend:
+    driver: bridge
+
+
+
