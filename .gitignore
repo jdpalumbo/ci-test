@@ -1,0 +1,36 @@
+lib-cov
+*.seed
+*.log
+*.csv
+*.out
+*.pid
+*.swp
+
+pids
+logs
+results
+tmp
+
+# API keys and secrets
+*.env
+
+
+# Dependency directory
+node_modules
+
+# Editors
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dataSources*
+.idea/dictionaries
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Ignore built ts files
+dist/**/*
+src/**/*.js
+
+coverage/**/*
+
