@@ -1,3 +1,4 @@
+Foo
 [![CircleCI](https://circleci.com/gh/riskalyze/identity-service.svg?style=shield&circle-token=87d50143f55313237a600dbadf76d40b48713cbc)](https://circleci.com/gh/riskalyze/identity-service)
 [![Maintainability](https://api.codeclimate.com/v1/badges/1d3ad6500bbff84e9f08/maintainability)](https://codeclimate.com/repos/5a317223c8dc2702a500082b/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/1d3ad6500bbff84e9f08/test_coverage)](https://codeclimate.com/repos/5a317223c8dc2702a500082b/test_coverage)
